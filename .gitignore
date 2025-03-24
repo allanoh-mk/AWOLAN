@@ -29,3 +29,22 @@ ios/build/
 
 # Environment variables
 .env*
+
+# VSCode
+.vscode/
+
+# Testing
+coverage/
+.jest/
+
+# Temp files
+*.log
+*.tmp
+*.temp
+
+# Android release files
+*.aab
+*.apk
+
+# Expo
+.expo-shared/
