@@ -1,0 +1,3 @@
+build --android_crosstool_top=@androidndk//:toolchain
+build --android_sdk=@androidsdk//:files
+build --fat_apk_cpu=x86_64,arm64-v8a

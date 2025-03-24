@@ -1,28 +1,99 @@
 {
   "expo": {
     "name": "AWOLAN",
-    "slug": "AWOLAN",
+    "slug": "awolan",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#000000"
+    },
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSDocumentPickerUsageDescription": "Allow AWOLAN to access your files for selecting music tracks",
+        "NSPhotoLibraryUsageDescription": "Allow AWOLAN to access your photos for selecting images",
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      },
+      "requireFullScreen": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "com.example.awolan"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notifications/android/notification-icon-48.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./assets/notifications/notification-sound.wav"
+          ],
+          "androidMode": "default",
+          "androidCollapsedTitle": "AWOLAN",
+          "iosDisplayInForeground": true,
+          "androidImportance": "high",
+          "androidNotificationIcon": {
+            "mdpi": "./assets/notifications/android/notification-icon-24.png",
+            "hdpi": "./assets/notifications/android/notification-icon-36.png",
+            "xhdpi": "./assets/notifications/android/notification-icon-48.png",
+            "xxhdpi": "./assets/notifications/android/notification-icon-72.png",
+            "xxxhdpi": "./assets/notifications/android/notification-icon-96.png"
+          }
+        }
+      ],
+      "expo-notifications",
+      "expo-image-picker",
+      "expo-font"
+    ],
+    "fonts": {
+      "Pacifico": "./assets/fonts/Pacifico-Regular.ttf",
+      "Game of Squids": "./assets/fonts/GameofSquids.ttf",
+      "Love": "./assets/fonts/Love.ttf",
+      "Maria": "./assets/fonts/Maria.ttf"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0f2a839e-d205-48e3-a6ac-3b44f0ae3930"
+      }
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "notifications": {
+      "android": {
+        "sound": "./assets/notifications/notification-sound.wav"
+      }
     }
   }
 }
