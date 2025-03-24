@@ -1,0 +1,3 @@
+[submodule "AWOLAN"]
+    path = AWOLAN
+    url = https://github.com/allanoh-mk/AWOLAN.git
